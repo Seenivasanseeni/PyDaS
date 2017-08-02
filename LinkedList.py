@@ -61,7 +61,7 @@ class LinkedList(object):
 		while (temp.next!=None):
 			print(str(temp.data),end=sep)
 			temp=temp.next
-			print(temp.data)
+		print(temp.data)
 	def getData(self,position):
 		if(self.length<=position):
 			return None
@@ -81,7 +81,7 @@ class LinkedList(object):
 			return  -1
 		parent.next=temp.next
 		self.length-=1
-		return 0
+		return 1
 	def removeAt(self,position):
 		if(self.length<=position):
 			return -1
@@ -96,7 +96,7 @@ class LinkedList(object):
 			temp=temp.next
 			index+=1
 		parent.next=temp.next
-		return 0
+		return 1
 	def reverse(self):
 		temp=self.head
 		new=None
@@ -111,21 +111,24 @@ class LinkedList(object):
 		temp=self.head
 		while (temp!=None):
 			array.append(temp.data)
+			temp=temp.next
 		return array
 	def CompareLists(self,head2):
-		headB=head2
+		headB=head2.head
 		headA=self.head
-		if(headA.length!=headB.length):
+		if((headA!=None and headB==None) or (headA==None and headB!=None)):
+			return False
+		if(headA==None and headB==None):
+			return True
+		if(self.length!=head2.length):
 			return False
 		while(headA!=None and headB!=None):
 			if( not headA.data==headB.data):
-			return False
+				return False
 			headA=headA.next
 			headB=headB.next
-		if(headA==None and headB==None):
-			return Truse
-		return False
-	def reverseLinkedList(self):
+		return True
+	def reversedLinkedList(self):
 		reversedList=self.copy()
 		reversedList.reverse()
 		return reversedList
