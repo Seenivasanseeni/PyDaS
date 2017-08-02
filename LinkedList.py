@@ -106,3 +106,26 @@ class LinkedList(object):
 			new=temp
 			temp=next
 		self.head=new
+	def list(self):
+		array=[]
+		temp=self.head
+		while (temp!=None):
+			array.append(temp.data)
+		return array
+	def CompareLists(self,head2):
+		headB=head2
+		headA=self.head
+		if(headA.length!=headB.length):
+			return False
+		while(headA!=None and headB!=None):
+			if( not headA.data==headB.data):
+			return False
+			headA=headA.next
+			headB=headB.next
+		if(headA==None and headB==None):
+			return Truse
+		return False
+	def reverseLinkedList(self):
+		reversedList=self.copy()
+		reversedList.reverse()
+		return reversedList
