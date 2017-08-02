@@ -38,7 +38,7 @@ class LinkedList(object):
 		else:
 			parent.next=temp
 		self.length+=1
-	def InsertNth(self,data,position):
+	def insertNth(self,data,position):
 		temp=self.head
 		index=0
 		parent=None
@@ -74,12 +74,15 @@ class LinkedList(object):
 	def remove(self,data):
 		temp=self.head
 		parent=None
-		while (temp.data!=data and temp!=None):
+		while (temp!=None and temp.data!=data):
 			parent=temp
 			temp=temp.next
 		if(temp==None):
 			return  -1
-		parent.next=temp.next
+		if(parent==None):
+			self.head=self.head.next
+		else:
+			parent.next=temp.next
 		self.length-=1
 		return 1
 	def removeAt(self,position):
@@ -113,7 +116,7 @@ class LinkedList(object):
 			array.append(temp.data)
 			temp=temp.next
 		return array
-	def CompareLists(self,head2):
+	def compareLists(self,head2):
 		headB=head2.head
 		headA=self.head
 		if((headA!=None and headB==None) or (headA==None and headB!=None)):
