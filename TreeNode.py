@@ -41,5 +41,4 @@ class TreeNode(object):
 		else:
 			return False
 
-
 NullNode=TreeNode()
