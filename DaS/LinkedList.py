@@ -54,6 +54,20 @@ class LinkedList(object):
 			temp.next=parent.next
 			parent.next=temp
 		self.length+=1
+	def updateNth(self,data,position):
+		if(position>self.length):
+			print("Invalid Index")
+			return;
+		temp=self.head
+		index=0
+		parent=None
+		while(index!=position):
+			parent=temp
+			temp=temp.next
+			index+=1
+		temp.data=data
+		if(parent==None):
+			self.head=temp
 	def printLinkedList(self,sep=" "):
 		if(self.length==0):
 			return None
