@@ -42,10 +42,8 @@ class MinHeap():
 				print("exchagning {} with {}".format(self.heap[i],self.heap[minsub]))
 				self.heap[i]=self.heap[minsub] 
 				i=minsub
-				l=left(i)
-				r=right(i)
-			else:
-				break
+			l=left(i)
+			r=right(i)
 		self.heap[i]=key
 
 	""""create-heap"""

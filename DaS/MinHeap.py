@@ -18,19 +18,16 @@ class MinHeap():
 				return;
 			self.heap=[]
 			self.heapsize=0
-			self.create_Heap(array);
+			self.createHeap(array);
 
 	"""method for making heap fro a subarray"""
 	def minHeapify(self,i):
 		key=self.heap[i]
 		l=left(i)
 		r=right(i)
-		print("in function for {}".format(key))
 		while(i<self.heapsize/2):
 			minsub=l
-			print("i=={} left={} right={}".format(i,l,r))
-			print("heap[i]={} left={} right=".format(self.heap[i],self.heap[l]))
-			#right child going out of the box
+			#right child going out of the heap
 			if( r>(self.heapsize-1) ):
 				if(l<self.heapsize and self.heap[l]<key):
 					self.heap[i]=self.heap[l]
@@ -39,7 +36,6 @@ class MinHeap():
 			if(self.heap[r]<self.heap[l]):
 				minsub=r
 			if(key>self.heap[minsub]):
-				print("exchagning {} with {}".format(self.heap[i],self.heap[minsub]))
 				self.heap[i]=self.heap[minsub] 
 				i=minsub
 				l=left(i)
@@ -53,8 +49,7 @@ class MinHeap():
 		self.heap=array
 		self.heapsize=len(array)
 		for i in range(math.floor(self.heapsize/2),-1,-1):
-			print("Calling heap on {}".format(i))
-			self.min_heapify(i)
+			self.minHeapify(i)
 
 	""" insert method"""
 	def insert(n):
