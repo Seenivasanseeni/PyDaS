@@ -82,3 +82,24 @@ class MinHeap():
 		self.heapsize-=1
 		self.minHeapify(0)
 		return key
+
+	""" findMin returns the minimum value of the MinHeap
+	"""
+	def findMin(self):
+		if(self.heapsize<=0):
+			print("Heap is Empty")
+			return NULL
+		return self.heap[0]
+
+	#remove method removes the the element and also maintains min-heap property
+	def remove(self,data):
+		if not data in self.heap:
+			print("Element is not in the heap")
+			return
+		di=self.heap.index(data)
+		self.heap[di]=self.heap[self.heapsize-1]
+		self.heap[self.heapsize-1]=data
+		self.heapsize-=1
+		self.minHeapify(di)
+		if(self.heapsize==0):
+			self.heap=[]
