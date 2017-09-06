@@ -52,7 +52,7 @@ class MinHeap():
 			self.minHeapify(i)
 
 	""" insert method"""
-	def insert(n):
+	def insert(self,n):
 		self.heapsize+=1
 		self.heap.append(n)
 		self.fixIt(self.heapsize-1)
@@ -69,3 +69,16 @@ class MinHeap():
 			else:
 				break;
 		self.heap[i]=key
+	
+	""" extract min extracts the minimum value and removes logically from the heap
+	"""
+	def extractMin(self):
+		if(self.heapsize==0):
+			print("Heap is empty...")
+			return
+		key=self.heap[0]
+		self.heap[0]=self.heap[self.heapsize-1]
+		self.heap[self.heapsize-1]=key
+		self.heapsize-=1
+		self.minHeapify(0)
+		return key

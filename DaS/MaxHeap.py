@@ -52,6 +52,33 @@ class MaxHeap():
 			self.maxHeapify(i)
 
 	""" insert method"""
-	def insert(n):
+	def insert(self,n):
 		self.heapsize+=1
 		self.heap.append(n)
+		self.fixIt(self.heapsize-1)
+	"""fixIt method fixes the max property of the heap as an element is just appended to the heap as last leaf node.
+	So fixing it up requires visiting parent's nodes and maintaning max property"""
+	def fixIt(self,i):
+		key=self.heap[i]
+		j=parent(i)
+		while(j>=0): #parents cannot exist behind 0
+			if(self.heap[j]<key):
+				self.heap[i]=self.heap[j]
+				i=j
+				j=parent(i)
+			else:
+				break;
+		self.heap[i]=key
+
+	""" extract max extracts the minimum value and removes logically from the heap
+	"""
+	def extractMax(self):
+		if(self.heapsize==0):
+			print("Heap is empty...")
+			return
+		key=self.heap[0]
+		self.heap[0]=self.heap[self.heapsize-1]
+		self.heap[self.heapsize-1]=key
+		self.heapsize-=1
+		self.maxHeapify(0)
+		return key
