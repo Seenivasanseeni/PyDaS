@@ -81,6 +81,8 @@ class MinHeap():
 		self.heap[self.heapsize-1]=key
 		self.heapsize-=1
 		self.minHeapify(0)
+		if(self.heapsize==0):
+			self.heap=[]
 		return key
 
 	""" findMin returns the minimum value of the MinHeap
