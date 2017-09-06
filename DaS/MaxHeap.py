@@ -90,7 +90,7 @@ class MaxHeap():
 	def findMax(self):
 		if(self.heapsize<=0):
 			print("Heap is Empty")
-			return NULL
+			return None
 		return self.heap[0]
 
 	#remove method removes the the element and also maintains max-heap property
