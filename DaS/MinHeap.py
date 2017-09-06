@@ -55,3 +55,17 @@ class MinHeap():
 	def insert(n):
 		self.heapsize+=1
 		self.heap.append(n)
+		self.fixIt(self.heapsize-1)
+	"""fixIt method fixes the min property of the heap as an element is just appended to the heap as last leaf node.
+	So fixing it up requires visiting parent's nodes and maintaning min property"""
+	def fixIt(self,i):
+		key=self.heap[i]
+		j=parent(i)
+		while(j>=0): #parents cannot exist behind 0
+			if(self.heap[j]>key):
+				self.heap[i]=self.heap[j]
+				i=j
+				j=parent(i)
+			else:
+				break;
+		self.heap[i]=key
