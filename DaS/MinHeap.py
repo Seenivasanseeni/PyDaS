@@ -75,14 +75,13 @@ class MinHeap():
 	def extractMin(self):
 		if(self.heapsize==0):
 			print("Heap is empty...")
+			self.heap=[]
 			return
 		key=self.heap[0]
 		self.heap[0]=self.heap[self.heapsize-1]
 		self.heap[self.heapsize-1]=key
 		self.heapsize-=1
 		self.minHeapify(0)
-		if(self.heapsize==0):
-			self.heap=[]
 		return key
 
 	""" findMin returns the minimum value of the MinHeap

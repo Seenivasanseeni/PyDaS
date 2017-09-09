@@ -74,6 +74,7 @@ class MaxHeap():
 	"""
 	def extractMax(self):
 		if(self.heapsize==0):
+			self.heap=[]
 			print("Heap is empty...")
 			return
 		key=self.heap[0]
@@ -81,8 +82,6 @@ class MaxHeap():
 		self.heap[self.heapsize-1]=key
 		self.heapsize-=1
 		self.maxHeapify(0)
-		if(self.heapsize==0):
-			self.heap=[]
 		return key
 
 	""" findMax returns the maxmimum value of the MaxHeap if it exists
