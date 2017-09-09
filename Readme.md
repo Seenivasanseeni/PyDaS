@@ -6,3 +6,6 @@ Currently, we have Limited Data Structures. We need you guys to make this worthy
 We are open and excited to receive modifications and new Data Structures and even Ideas from 
 Anyone from any field, any country, geek or non-geek and they are more than Welcome.
 Dont forget to be Working with Python 3 with a smile.
+
+To Contribute...
+	https://seenivasanseeni.github.io/PyDaS/
