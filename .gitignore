@@ -1,3 +1,5 @@
-.gitignore
 __pycache__
 DaS/test.py
+.*
+demo
+.gitignore
