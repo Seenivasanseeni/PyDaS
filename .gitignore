@@ -1,5 +1,11 @@
-__pycache__
-DaS/test.py
+__pycache__/*
+PDaS/test.py
+PDaS/__pycache__/*
 .*
 demo
 .gitignore
+
+#directories created while running setup.py
+build
+dist
+*.egg-info

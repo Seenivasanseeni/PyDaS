@@ -1,4 +1,4 @@
-# PyDaS - PythonDataStructures
+# PDaS - PythonDataStructures
 
 This Open Source project aims to create Python Package which contain the major Data Structures 
 using Python 3.	It might help many Students and other Developers to be increase their productivity.
@@ -9,3 +9,6 @@ Dont forget to be Working with Python 3 with a smile.
 
 To Contribute...
 	https://seenivasanseeni.github.io/PyDaS/
+
+Pip ackage downloaded using
+`pip install PDaS`
