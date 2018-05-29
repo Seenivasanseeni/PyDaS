@@ -6,5 +6,5 @@ setuptools.setup(
     author="seeni",
     author_email="seeni0424@gmail.com",
     url="https://github.com/Seenivasanseeni/PyDaS",
-    packges=setuptools.find_packages()
+    packages=setuptools.find_packages()
 )
